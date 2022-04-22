@@ -4,11 +4,16 @@
   <name>nav2_gradient_costmap_plugin</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="girvenavery@gmail.com">avery</maintainer>
+    <maintainer email="agirven@umich.edu">Sal Martinez</maintainer> <!-- plz update the email to yours lol-->
+  <maintainer email="agirven@umich.edu">Avery Girven</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <depend>nav2_costmap_2d</depend>
+  <depend>pluginlib</depend>
+  <depend>rclcpp</depend>
+  
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
