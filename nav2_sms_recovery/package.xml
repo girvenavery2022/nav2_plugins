@@ -4,7 +4,8 @@
   <name>nav2_sms_recovery</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="girvenavery@gmail.com">avery</maintainer>
+  <maintainer email="agirven@umich.edu">Emma Hetrick</maintainer> <!-- plz update the email to yours lol-->
+  <maintainer email="agirven@umich.edu">Avery Girven</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
