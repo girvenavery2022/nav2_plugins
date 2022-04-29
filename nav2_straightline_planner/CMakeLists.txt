@@ -55,6 +55,8 @@ target_include_directories(nav2_straightline_planner PUBLIC
 
 target_compile_features(nav2_straightline_planner PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
+pluginlib_export_plugin_description_file(nav2_core global_planner_plugin.xml)
+
 install(TARGETS nav2_straightline_planner
   DESTINATION lib/${PROJECT_NAME})
 
