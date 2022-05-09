@@ -76,14 +76,11 @@ nav_msgs::msg::Path StraightLine::createPlan(
   global_path.header.stamp = node_->now();
   global_path.header.frame_id = global_frame_;
 
-
+/*
   auto rrt = RRT(costmap_);
   global_path = rrt.get_path(start.pose, goal.pose, interpolation_resolution_);
-
-  global_path.header.stamp = node_->now();
-  global_path.header.frame_id = global_frame_;
-
-  /*
+*/
+  
   // calculating the number of loops for current value of interpolation_resolution_
   int total_number_of_loop = std::hypot(
     goal.pose.position.x - start.pose.position.x,
@@ -108,7 +105,7 @@ nav_msgs::msg::Path StraightLine::createPlan(
   }
 
   global_path.poses.push_back(goal);
-  */
+  
   return global_path;
 }
 }// namespace nav2_straightline_planner

@@ -13,27 +13,10 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 #include "nav2_costmap_2d/costmap_2d_ros.hpp"
+#include "utility/point.hpp"
 
 namespace nav2_straightline_planner
 {   
-    // from isc_nav/include/utility/point.hpp
-    struct Point2D
-    {
-        double x, y;
-        Point2D( const double& ix, const double& iy )
-            : x( ix )
-            , y( iy )
-        {
-        }
-        Point2D() {}
-    };
-
-    // from isc_nav/include/utility/point.hpp
-    inline bool operator==( const Point2D& lhs, const Point2D& rhs )
-    {
-        return ( lhs.x == rhs.x && lhs.y == rhs.y );
-    }
-    
     class RRT 
     {
     public:
@@ -357,7 +340,7 @@ namespace nav2_straightline_planner
         std::vector<Point2D> V;
 
         // Constants
-        double max_dist_ = 50; // Shld be shorter of longer??
+        double max_dist_ = 50; // Shld be shorter or longer??
         int lim_ = 1000; // Number of iterations
 
         // Random number generator
