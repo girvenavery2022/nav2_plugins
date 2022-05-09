@@ -1,4 +1,0 @@
-RRT:
-  ros_parameters:
-    max_dist: 50
-    lim: 1000

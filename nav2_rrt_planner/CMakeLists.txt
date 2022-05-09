@@ -57,9 +57,6 @@ pluginlib_export_plugin_description_file(nav2_core global_planner_plugin.xml)
 install(TARGETS nav2_rrt_planner
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY config
-  DESTINATION share/${PROJECT_NAME})
-
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
