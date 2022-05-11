@@ -4,6 +4,7 @@
 #include "nav2_util/node_utils.hpp"
 
 #include "nav2_straightline_planner/nav2_straightline_planner.hpp"
+#include "nav2_straightline_planner/rrt_planner.hpp"
 
 namespace nav2_straightline_planner
 {
@@ -74,6 +75,12 @@ nav_msgs::msg::Path StraightLine::createPlan(
   global_path.poses.clear();
   global_path.header.stamp = node_->now();
   global_path.header.frame_id = global_frame_;
+
+/*
+  auto rrt = RRT(costmap_);
+  global_path = rrt.get_path(start.pose, goal.pose, interpolation_resolution_);
+*/
+  
   // calculating the number of loops for current value of interpolation_resolution_
   int total_number_of_loop = std::hypot(
     goal.pose.position.x - start.pose.position.x,
@@ -93,11 +100,12 @@ nav_msgs::msg::Path StraightLine::createPlan(
     pose.pose.orientation.w = 1.0;
     pose.header.stamp = node_->now();
     pose.header.frame_id = global_frame_;
+
     global_path.poses.push_back(pose);
   }
 
   global_path.poses.push_back(goal);
-
+  
   return global_path;
 }
 }// namespace nav2_straightline_planner
